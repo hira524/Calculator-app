@@ -23,3 +23,55 @@
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(0, 0%, 100%);
 }
+
+
+.theme2 {
+  /* Backgrounds */
+  --main-bkg: hsl(0, 0%, 90%);
+  --toggle-kaypad-bkg: hsl(0, 5%, 81%);
+  --screen-bkg: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --del-reset-bkg-hover: hsl(185, 50%, 62%);
+  --del-reset-bkg: hsl(185, 42%, 37%);
+  --del-reset-border: hsl(185, 58%, 25%);
+
+  --sum-toggle-hover: hsl(25, 86%, 52%);
+  --sum-toggle: hsl(25, 98%, 40%);
+  --sum-toggle-border: hsl(25, 99%, 27%);
+
+  --key-hover: hsl(0, 0%, 100%);
+  --key: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+
+  /* Text */
+  --txt-buttons: hsl(60, 10%, 19%);
+  --txt-buttons-invert: hsl(0, 0%, 100%);
+  --txt-buttons-result: hsl(198, 20%, 13%);
+  --txt-buttons-sum: hsl(0, 0%, 100%);
+}
+.theme3 {
+  /* Backgrounds */
+  --main-bkg: hsl(268, 75%, 9%);
+  --toggle-kaypad-bkg: hsl(268, 71%, 12%);
+  --screen-bkg: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --del-reset-bkg-hover: hsl(281, 69%, 45%);
+  --del-reset-bkg: hsl(281, 89%, 26%);
+  --del-reset-border: hsl(285, 91%, 52%);
+
+  --sum-toggle-hover: hsl(176, 100%, 72%);
+  --sum-toggle: hsl(176, 100%, 44%);
+  --sum-toggle-border: hsl(177, 92%, 70%);
+
+  --key-hover: hsl(268, 37%, 40%);
+  --key: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+
+  /* Text */
+  --txt-buttons: hsl(52, 100%, 62%);
+  --txt-buttons-invert: hsl(0, 0%, 100%);
+  --txt-buttons-result: hsl(52, 100%, 62%);
+  --txt-buttons-sum: hsl(198, 20%, 13%);
+}
