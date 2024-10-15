@@ -1,1 +1,25 @@
 
+.theme1 {
+  /* Backgrounds */
+  --main-bkg: hsl(222, 26%, 31%);
+  --toggle-kaypad-bkg: hsl(223, 31%, 20%);
+  --screen-bkg: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --del-reset-bkg-hover: hsl(225, 41%, 68%);
+  --del-reset-bkg: hsl(225, 21%, 49%);
+  --del-reset-border: hsl(224, 28%, 35%);
+
+  --sum-toggle-hover: hsl(6, 91%, 63%);
+  --sum-toggle: hsl(6, 63%, 50%);
+  --sum-toggle-border: hsl(6, 70%, 34%);
+
+  --key-hover: hsl(0, 0%, 100%);
+  --key: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  /* Text */
+  --txt-buttons: hsl(221, 14%, 31%);
+  --txt-buttons-invert: hsl(0, 0%, 100%);
+  --txt-buttons-result: hsl(0, 0%, 100%);
+}
