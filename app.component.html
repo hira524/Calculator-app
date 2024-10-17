@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="./Downloads/theme1.png"
-  />
+  <link rel="icon" href="./Downloads/theme1.png" />
   <title>Calculator app</title>
   <link rel="stylesheet" href="app.component.css" />
 </head>
@@ -20,47 +15,39 @@
       <h2>theme</h2>
       <div class="switchContainer">
         <h2>123</h2>
-        <input
-          [(ngModel)]="switchPosition"
-          (input)="setTheme(switchPosition)"
-          class="switch"
-          type="range"
-          aria-label="theme"
-          min="1"
-          max="3"
-        />
+        <input [formControl]="themeControl" class="switch" type="range" min="1" max="3" aria-label="theme"/>
       </div>
     </div>
   </header>
 
   <section class="resultContainer">
     <div class="operation">{{ operatorSign }}</div>
-    <div class="result">{{ displayValue }}</div>
+    <div class="result">{{ displayValue | formatResult }}</div> <!-- Using formatResult pipe -->
   </section>
 
   <section class="controlBoard">
-    <div class="button" (click)="calculate('7')">7</div>
-    <div class="button" (click)="calculate('8')">8</div>
-    <div class="button" (click)="calculate('9')">9</div>
-    <div class="button" (click)="calculate('DEL')">DEL</div>
+    <div class="button" (click)="onButtonClick('7')">7</div>
+    <div class="button" (click)="onButtonClick('8')">8</div>
+    <div class="button" (click)="onButtonClick('9')">9</div>
+    <div class="button" (click)="onButtonClick('DEL')">DEL</div>
 
-    <div class="button" (click)="calculate('4')">4</div>
-    <div class="button" (click)="calculate('5')">5</div>
-    <div class="button" (click)="calculate('6')">6</div>
-    <div class="button" (click)="calculate('+')">+</div>
+    <div class="button" (click)="onButtonClick('4')">4</div>
+    <div class="button" (click)="onButtonClick('5')">5</div>
+    <div class="button" (click)="onButtonClick('6')">6</div>
+    <div class="button" (click)="onButtonClick('+')">+</div>
 
-    <div class="button" (click)="calculate('1')">1</div>
-    <div class="button" (click)="calculate('2')">2</div>
-    <div class="button" (click)="calculate('3')">3</div>
-    <div class="button" (click)="calculate('-')">-</div>
+    <div class="button" (click)="onButtonClick('1')">1</div>
+    <div class="button" (click)="onButtonClick('2')">2</div>
+    <div class="button" (click)="onButtonClick('3')">3</div>
+    <div class="button" (click)="onButtonClick('-')">-</div>
 
-    <div class="button" (click)="calculate('.')">.</div>
-    <div class="button" (click)="calculate('0')">0</div>
-    <div class="button" (click)="calculate('/')">/</div>
-    <div class="button" (click)="calculate('x')">x</div>
+    <div class="button" (click)="onButtonClick('.')">.</div>
+    <div class="button" (click)="onButtonClick('0')">0</div>
+    <div class="button" (click)="onButtonClick('/')">/</div>
+    <div class="button" (click)="onButtonClick('x')">x</div>
 
-    <div class="button" (click)="calculate('RESET')">RESET</div>
-    <div class="button" (click)="calculate('=')">=</div>
+    <div class="button" (click)="onButtonClick('RESET')">RESET</div>
+    <div class="button" (click)="onButtonClick('=')">=</div>
   </section>
 </main>
 
