@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
 
 .theme1 {
- 
+
   --main-bkg: hsl(222, 26%, 31%);
   --toggle-kaypad-bkg: hsl(223, 31%, 20%);
   --screen-bkg: hsl(224, 36%, 15%);
 
- 
   --del-reset-bkg-hover: hsl(225, 41%, 68%);
   --del-reset-bkg: hsl(225, 21%, 49%);
   --del-reset-border: hsl(224, 28%, 35%);
@@ -19,17 +18,16 @@
   --key: hsl(30, 25%, 89%);
   --key-shadow: hsl(28, 16%, 65%);
 
- 
   --txt-buttons: hsl(221, 14%, 31%);
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(0, 0%, 100%);
 }
 .theme2 {
-   
+
   --main-bkg: hsl(0, 0%, 90%);
   --toggle-kaypad-bkg: hsl(0, 5%, 81%);
   --screen-bkg: hsl(0, 0%, 93%);
- 
+
   --del-reset-bkg-hover: hsl(185, 50%, 62%);
   --del-reset-bkg: hsl(185, 42%, 37%);
   --del-reset-border: hsl(185, 58%, 25%);
@@ -42,18 +40,17 @@
   --key: hsl(45, 7%, 89%);
   --key-shadow: hsl(35, 11%, 61%);
 
-  
   --txt-buttons: hsl(60, 10%, 19%);
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(198, 20%, 13%);
   --txt-buttons-sum: hsl(0, 0%, 100%);
 }
 .theme3 {
- 
+
   --main-bkg: hsl(268, 75%, 9%);
   --toggle-kaypad-bkg: hsl(268, 71%, 12%);
   --screen-bkg: hsl(268, 71%, 12%);
- 
+
   --del-reset-bkg-hover: hsl(281, 69%, 45%);
   --del-reset-bkg: hsl(281, 89%, 26%);
   --del-reset-border: hsl(285, 91%, 52%);
@@ -66,7 +63,6 @@
   --key: hsl(268, 47%, 21%);
   --key-shadow: hsl(290, 70%, 36%);
 
- 
   --txt-buttons: hsl(52, 100%, 62%);
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(52, 100%, 62%);
@@ -74,18 +70,17 @@
 }
 
 :root {
- 
+
   --brd-radius: 0.7rem;
 }
 
- 
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
- 
 body,
 h1,
 h2,
@@ -93,7 +88,7 @@ p {
   margin: 0;
 }
 
- 
+
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 2rem;
@@ -106,14 +101,14 @@ body {
   user-select: none;
 }
 
- 
+
 main {
   display: grid;
   gap: 1.5rem;
   max-width: 33.75rem;
 }
 
- 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -161,7 +156,7 @@ h2 {
   cursor: pointer;
 }
 
- 
+
 .resultContainer {
   display: flex;
   justify-content: flex-end;
@@ -179,10 +174,10 @@ h2 {
   position: absolute;
   top: 10px;
   right: 40px;
-   
+
   color: var(--key-shadow);
 }
- 
+
 .controlBoard {
   display: grid;
   width: min(90vw, 33.75rem);
@@ -208,7 +203,6 @@ h2 {
 .button:hover {
   cursor: pointer;
   background-color: var(--txt-buttons-invert);
-  background-color: var(--key-hover);
 }
 .button:nth-child(4),
 .button:nth-last-child(2),
@@ -235,7 +229,6 @@ h2 {
   background-color: var(--sum-toggle-hover);
 }
 
- 
 footer {
   max-width: 90vw;
   justify-self: center;
@@ -251,7 +244,6 @@ footer a:hover {
   color: var(--sum-toggle);
 }
 
- 
 @media screen and (max-width: 480px) {
   h2,
   .switchContainer h2 {
@@ -278,15 +270,4 @@ footer a:hover {
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 350px) {
-  .result {
-    font-size: 2rem;
-    line-height: 1.4;
-  }
-}
-@media screen and (max-width: 280px) {
-  .result {
-    font-size: 1.7rem;
-    line-height: 1.7;
-  }
-}
+
