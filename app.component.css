@@ -30,12 +30,15 @@
 *::after {
   box-sizing: border-box;
 }
+
 body,
 h1,
 h2,
 p {
   margin: 0;
 }
+
+
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 2rem;
@@ -47,11 +50,15 @@ body {
   place-content: center;
   user-select: none;
 }
+
+
 main {
   display: grid;
   gap: 1.5rem;
   max-width: 33.75rem;
 }
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -89,7 +96,7 @@ h2 {
 }
 .switch::-webkit-slider-thumb {
   appearance: none;
-  border-radius: var(--brd-radius);
+  border-radius: 0.5rem;
   width: 1rem;
   height: 1rem;
   background-color: var(--sum-toggle);
@@ -98,11 +105,13 @@ h2 {
   background-color: var(--sum-toggle-hover);
   cursor: pointer;
 }
+
+
 .resultContainer {
   display: flex;
   justify-content: flex-end;
   background-color: var(--screen-bkg);
-  border-radius: var(--brd-radius);
+  border-radius: 0.5rem;
   padding: 2.5rem 2rem;
   overflow-x: hidden;
   position: relative;
@@ -117,13 +126,14 @@ h2 {
   right: 40px;
   color: var(--key-shadow);
 }
+
 .controlBoard {
   display: grid;
   width: min(90vw, 33.75rem);
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 4rem);
   background-color: var(--toggle-kaypad-bkg);
-  border-radius: var(--brd-radius);
+  border-radius: 0.5rem;
   padding: 1.9rem;
   gap: 1.4rem;
 }
@@ -133,12 +143,14 @@ h2 {
   display: grid;
   place-content: center;
   background-color: var(--key);
-  border-radius: var(--brd-radius);
+  border-radius: 0.5rem; 
   color: var(--txt-buttons);
   border-bottom: 0.25rem solid var(--key-shadow);
   transition-property: border-bottom-width, margin-top, background-color;
   transition-duration: 0.1s;
+
 }
+
 .button:hover {
   cursor: pointer;
   background-color: var(--txt-buttons-invert);
