@@ -22,73 +22,20 @@
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(0, 0%, 100%);
 }
-.theme2 {
-
-  --main-bkg: hsl(0, 0%, 90%);
-  --toggle-kaypad-bkg: hsl(0, 5%, 81%);
-  --screen-bkg: hsl(0, 0%, 93%);
-
-  --del-reset-bkg-hover: hsl(185, 50%, 62%);
-  --del-reset-bkg: hsl(185, 42%, 37%);
-  --del-reset-border: hsl(185, 58%, 25%);
-
-  --sum-toggle-hover: hsl(25, 86%, 52%);
-  --sum-toggle: hsl(25, 98%, 40%);
-  --sum-toggle-border: hsl(25, 99%, 27%);
-
-  --key-hover: hsl(0, 0%, 100%);
-  --key: hsl(45, 7%, 89%);
-  --key-shadow: hsl(35, 11%, 61%);
-
-  --txt-buttons: hsl(60, 10%, 19%);
-  --txt-buttons-invert: hsl(0, 0%, 100%);
-  --txt-buttons-result: hsl(198, 20%, 13%);
-  --txt-buttons-sum: hsl(0, 0%, 100%);
-}
-.theme3 {
-
-  --main-bkg: hsl(268, 75%, 9%);
-  --toggle-kaypad-bkg: hsl(268, 71%, 12%);
-  --screen-bkg: hsl(268, 71%, 12%);
-
-  --del-reset-bkg-hover: hsl(281, 69%, 45%);
-  --del-reset-bkg: hsl(281, 89%, 26%);
-  --del-reset-border: hsl(285, 91%, 52%);
-
-  --sum-toggle-hover: hsl(176, 100%, 72%);
-  --sum-toggle: hsl(176, 100%, 44%);
-  --sum-toggle-border: hsl(177, 92%, 70%);
-
-  --key-hover: hsl(268, 37%, 40%);
-  --key: hsl(268, 47%, 21%);
-  --key-shadow: hsl(290, 70%, 36%);
-
-  --txt-buttons: hsl(52, 100%, 62%);
-  --txt-buttons-invert: hsl(0, 0%, 100%);
-  --txt-buttons-result: hsl(52, 100%, 62%);
-  --txt-buttons-sum: hsl(198, 20%, 13%);
-}
-
 :root {
-
   --brd-radius: 0.7rem;
 }
-
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 body,
 h1,
 h2,
 p {
   margin: 0;
 }
-
-
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 2rem;
@@ -100,15 +47,11 @@ body {
   place-content: center;
   user-select: none;
 }
-
-
 main {
   display: grid;
   gap: 1.5rem;
   max-width: 33.75rem;
 }
-
-
 header {
   display: flex;
   justify-content: space-between;
@@ -155,8 +98,6 @@ h2 {
   background-color: var(--sum-toggle-hover);
   cursor: pointer;
 }
-
-
 .resultContainer {
   display: flex;
   justify-content: flex-end;
@@ -174,10 +115,8 @@ h2 {
   position: absolute;
   top: 10px;
   right: 40px;
-
   color: var(--key-shadow);
 }
-
 .controlBoard {
   display: grid;
   width: min(90vw, 33.75rem);
@@ -219,7 +158,7 @@ h2 {
 .button:last-child {
   background-color: var(--sum-toggle);
   border-bottom: 0.25rem solid var(--sum-toggle-border);
-  color: var(--txt-buttons-sum);
+
 }
 .button:nth-child(4):hover,
 .button:nth-last-child(2):hover {
@@ -242,32 +181,5 @@ footer a {
 }
 footer a:hover {
   color: var(--sum-toggle);
-}
-
-@media screen and (max-width: 480px) {
-  h2,
-  .switchContainer h2 {
-    font-size: 0.7rem;
-  }
-  .resultContainer {
-    padding: 1rem 1.4rem;
-  }
-  .result {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  .controlBoard {
-    gap: 0.9rem;
-    padding: 1.5rem;
-  }
-  .button {
-    border-radius: 0.3rem;
-    font-size: 2rem;
-  }
-  .button:nth-child(4),
-  .button:nth-last-child(2),
-  .button:last-child {
-    font-size: 1.2rem;
-  }
 }
 
