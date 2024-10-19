@@ -1,40 +1,37 @@
-import {Component} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { CalculatorService } from './calculator.service';
+import { OperatorPipe, FormatResultPipe } from './format-result.pipe';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  imports: [
-    ReactiveFormsModule
-  ],
+  imports: [OperatorPipe, FormatResultPipe],
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
   displayValue: string = '0';
   number: string = '';
   operatorSign: string = '';
-
-
-  // Handle calculator button press
+  constructor(private calculatorService: CalculatorService) {}
   calculate(button: string) {
+    const operatorPipe = new OperatorPipe();
+    const formatResultPipe = new FormatResultPipe();
     switch (button) {
       case '=':
         this.operatorSign = '';
         try {
-          this.number = eval(this.number); // Evaluating the math expression
-          this.number = '' + this.number; // Convert result back to string
+          this.number = operatorPipe.transform(this.number); // Replace operators
+          this.number = this.calculatorService.evaluateExpression(this.number); // Evaluate expression
+          this.number = formatResultPipe.transform(this.number); // Format the result
         } catch (e) {
           this.number = 'Error';
         }
-        this.displayValue = this.number.slice(0, 12); // Limit display length
+        this.displayValue = this.number;
         break;
-
       case 'RESET':
         this.number = '';
         this.displayValue = '0';
         break;
-
       case 'DEL':
         this.number = this.number.slice(0, -1);
         this.displayValue = this.displayValue.slice(0, -1);
@@ -49,61 +46,34 @@ export class AppComponent  {
         break;
 
       case '.':
-        if (!this.dotCheck()) {
+       if (!this.calculatorService.containsDot(this.displayValue)) {
           this.number += button;
           this.displayValue += button;
         }
         break;
 
-      default: // Handle numbers 0-9
-        if (this.operatorCheck() || this.displayValue === '0') {
+      default: // Handle numbers 0 to 9
+        if (this.calculatorService.isOperator(this.number.slice(-1)) || this.displayValue === '0') {
           this.displayValue = '';
         }
         this.number += button;
         this.displayValue += button;
-        this.displayValue = this.displayValue.slice(0, 12); // Limit length
+        this.displayValue = this.displayValue.slice(0, 10); // Limit length
         break;
     }
   }
 
-  // Handle operator sign and its display position
   handleOperator(button: string) {
-    if (this.operatorCheck()) {
+    if (this.calculatorService.isOperator(this.number.slice(-1))) {
       this.number = this.number.slice(0, -1); // Replace last operator
     }
 
     this.operatorSign = button;
-    switch (button) {
-      case '+':
-        this.operatorSign = '+';
-        break;
-      case '-':
-        this.operatorSign = '-';
-        break;
-      case '/':
-        this.operatorSign = '/';
-        break;
-      case 'x':
-        button = '*'; // Replace 'x' with '*' for calculation
-        this.operatorSign = 'x';
-        break;
-    }
+    if (button === 'x') button = '*'; // Replace x with *
     this.number += button;
-  }
-
-  // Prevent multiple dots in the same number
-  dotCheck(): boolean {
-    return this.displayValue.includes('.');
-  }
-
-  // Check if the last character is an operator
-  operatorCheck(): boolean {
-    const lastChar = this.number.charAt(this.number.length - 1);
-    return lastChar === '*' || lastChar === '/' || lastChar === '+' || lastChar === '-';
   }
 
   onButtonClick(buttonValue: string) {
     this.calculate(buttonValue);
   }
 }
-
