@@ -16,41 +16,37 @@
       </div>
     </div>
   </header>
+
   <section class="resultContainer">
     <div class="operation">{{ operatorSign }}</div>
     <div class="result">{{ displayValue | formatResult }}</div>
   </section>
+
   <section class="controlBoard">
     <div class="button" (click)="onButtonClick('7')">7</div>
     <div class="button" (click)="onButtonClick('8')">8</div>
     <div class="button" (click)="onButtonClick('9')">9</div>
     <div class="button" (click)="onButtonClick('DEL')">DEL</div>
-
     <div class="button" (click)="onButtonClick('4')">4</div>
     <div class="button" (click)="onButtonClick('5')">5</div>
     <div class="button" (click)="onButtonClick('6')">6</div>
     <div class="button" (click)="onButtonClick('+')">+</div>
-
     <div class="button" (click)="onButtonClick('1')">1</div>
     <div class="button" (click)="onButtonClick('2')">2</div>
     <div class="button" (click)="onButtonClick('3')">3</div>
     <div class="button" (click)="onButtonClick('-')">-</div>
-
     <div class="button" (click)="onButtonClick('.')">.</div>
     <div class="button" (click)="onButtonClick('0')">0</div>
     <div class="button" (click)="onButtonClick('/')">/</div>
     <div class="button" (click)="onButtonClick('x')">x</div>
-
     <div class="button" (click)="onButtonClick('RESET')">RESET</div>
     <div class="button" (click)="onButtonClick('=')">=</div>
   </section>
 </main>
-
 <footer>
   Coded by
   <a href="https://github.com/hira524/Calculator-app">Syeda Hira</a>.
 </footer>
-
 <script src="app.component.ts"></script>
 </body>
 </html>
