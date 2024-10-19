@@ -143,7 +143,7 @@ h2 {
   display: grid;
   place-content: center;
   background-color: var(--key);
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem;
   color: var(--txt-buttons);
   border-bottom: 0.25rem solid var(--key-shadow);
   transition-property: border-bottom-width, margin-top, background-color;
