@@ -21,9 +21,9 @@ export class AppComponent {
       case '=':
         this.operatorSign = '';
         try {
-          this.number = operatorPipe.transform(this.number); // Replace operators
-          this.number = this.calculatorService.evaluateExpression(this.number); // Evaluate expression
-          this.number = formatResultPipe.transform(this.number); // Format the result
+          this.number = operatorPipe.transform(this.number);
+          this.number = this.calculatorService.evaluateExpression(this.number);
+          this.number = formatResultPipe.transform(this.number);
         } catch (e) {
           this.number = 'Error';
         }
@@ -51,31 +51,22 @@ export class AppComponent {
           this.displayValue += button;
         }
         break;
-
-      default: // Handle numbers 0 to 9
+      default:
         if (this.calculatorService.isOperator(this.number.slice(-1)) || this.displayValue === '0') {
           this.displayValue = '';
         }
         this.number += button;
         this.displayValue += button;
-        this.displayValue = this.displayValue.slice(0, 10); // Limit length
+        this.displayValue = this.displayValue.slice(0, 10);
         break;
     }
   }
-
   handleOperator(button: string) {
-    // Create an instance of the OperatorPipe
     const operatorPipe = new OperatorPipe();
-
-    // Check if the last character is an operator and remove it if true
     if (this.calculatorService.isOperator(this.number.slice(-1))) {
-      this.number = this.number.slice(0, -1); // Replace last operator
+      this.number = this.number.slice(0, -1);
     }
-
-    // Update the operator sign for display
     this.operatorSign = button;
-
-    // Use the OperatorPipe to transform 'x' into '*' for calculation purposes
     this.number += operatorPipe.transform(button);
   }
   onButtonClick(buttonValue: string) {
