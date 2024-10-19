@@ -1,30 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
 
 .theme1 {
-
   --main-bkg: hsl(222, 26%, 31%);
   --toggle-kaypad-bkg: hsl(223, 31%, 20%);
   --screen-bkg: hsl(224, 36%, 15%);
-
   --del-reset-bkg-hover: hsl(225, 41%, 68%);
   --del-reset-bkg: hsl(225, 21%, 49%);
   --del-reset-border: hsl(224, 28%, 35%);
-
   --sum-toggle-hover: hsl(6, 91%, 63%);
   --sum-toggle: hsl(6, 63%, 50%);
   --sum-toggle-border: hsl(6, 70%, 34%);
-
   --key-hover: hsl(0, 0%, 100%);
   --key: hsl(30, 25%, 89%);
   --key-shadow: hsl(28, 16%, 65%);
-
   --txt-buttons: hsl(221, 14%, 31%);
   --txt-buttons-invert: hsl(0, 0%, 100%);
   --txt-buttons-result: hsl(0, 0%, 100%);
 }
-:root {
-  --brd-radius: 0.7rem;
-}
+
 *,
 *::before,
 *::after {
@@ -38,7 +31,6 @@ p {
   margin: 0;
 }
 
-
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 2rem;
@@ -51,14 +43,11 @@ body {
   user-select: none;
 }
 
-
 main {
   display: grid;
   gap: 1.5rem;
   max-width: 33.75rem;
 }
-
-
 header {
   display: flex;
   justify-content: space-between;
