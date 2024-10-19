@@ -13,6 +13,7 @@ export class AppComponent {
   number: string = '';
   operatorSign: string = '';
   constructor(private calculatorService: CalculatorService) {}
+
   calculate(button: string) {
     const operatorPipe = new OperatorPipe();
     const formatResultPipe = new FormatResultPipe();
@@ -37,7 +38,6 @@ export class AppComponent {
         this.displayValue = this.displayValue.slice(0, -1);
         if (this.displayValue === '') this.displayValue = '0';
         break;
-
       case '+':
       case '-':
       case '/':
@@ -64,15 +64,20 @@ export class AppComponent {
   }
 
   handleOperator(button: string) {
+    // Create an instance of the OperatorPipe
+    const operatorPipe = new OperatorPipe();
+
+    // Check if the last character is an operator and remove it if true
     if (this.calculatorService.isOperator(this.number.slice(-1))) {
       this.number = this.number.slice(0, -1); // Replace last operator
     }
 
+    // Update the operator sign for display
     this.operatorSign = button;
-    if (button === 'x') button = '*'; // Replace x with *
-    this.number += button;
-  }
 
+    // Use the OperatorPipe to transform 'x' into '*' for calculation purposes
+    this.number += operatorPipe.transform(button);
+  }
   onButtonClick(buttonValue: string) {
     this.calculate(buttonValue);
   }
