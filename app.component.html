@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="theme1">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./Downloads/theme1.png" />
   <title>Calculator app</title>
   <link rel="stylesheet" href="app.component.css" />
 </head>
@@ -19,12 +16,10 @@
       </div>
     </div>
   </header>
-
   <section class="resultContainer">
     <div class="operation">{{ operatorSign }}</div>
-    <div class="result">{{ displayValue }}</div>  
+    <div class="result">{{ displayValue | formatResult }}</div>
   </section>
-
   <section class="controlBoard">
     <div class="button" (click)="onButtonClick('7')">7</div>
     <div class="button" (click)="onButtonClick('8')">8</div>
