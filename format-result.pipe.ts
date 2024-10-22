@@ -13,7 +13,6 @@ export class OperatorPipe implements PipeTransform {
   standalone: true,
   name: 'formatResult'
 })
-
 export class FormatResultPipe implements PipeTransform {
   transform(value: string | number, decimalLimit: number = 4): string {
     const num = parseFloat(value.toString());
