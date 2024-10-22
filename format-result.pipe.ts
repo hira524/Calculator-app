@@ -13,11 +13,16 @@ export class OperatorPipe implements PipeTransform {
   standalone: true,
   name: 'formatResult'
 })
+
 export class FormatResultPipe implements PipeTransform {
-  transform(value: string | number, length: number = 10): string {
+  transform(value: string | number, decimalLimit: number = 4): string {
     const num = parseFloat(value.toString());
     if (isNaN(num)) return value.toString();
-    const rounded = num.toPrecision(length);
-    return parseFloat(rounded).toString();
+    if (Number.isInteger(num)) {
+      return num.toString();
+    }
+    const formattedValue = num.toFixed(decimalLimit);
+    return parseFloat(formattedValue).toString();
   }
 }
+
