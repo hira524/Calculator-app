@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CalculatorService } from './calculator.service';
 import { OperatorPipe, FormatResultPipe } from './format-result.pipe';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +13,7 @@ export class AppComponent {
   displayValue: string = '0';
   number: string = '';
   operatorSign: string = '';
+
   constructor(private calculatorService: CalculatorService) {}
 
   calculate(button: string) {
@@ -44,9 +46,8 @@ export class AppComponent {
       case 'x':
         this.handleOperator(button);
         break;
-
       case '.':
-       if (!this.calculatorService.containsDot(this.displayValue)) {
+        if (!this.calculatorService.containsDot(this.displayValue)) {
           this.number += button;
           this.displayValue += button;
         }
@@ -61,6 +62,7 @@ export class AppComponent {
         break;
     }
   }
+
   handleOperator(button: string) {
     const operatorPipe = new OperatorPipe();
     if (this.calculatorService.isOperator(this.number.slice(-1))) {
@@ -69,7 +71,11 @@ export class AppComponent {
     this.operatorSign = button;
     this.number += operatorPipe.transform(button);
   }
-  onButtonClick(buttonValue: string) {
-    this.calculate(buttonValue);
+
+  onButtonClick(event: any) {
+    const buttonValue = event.target.getAttribute('data-button');
+    if (buttonValue) {
+      this.calculate(buttonValue);
+    }
   }
 }
