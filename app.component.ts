@@ -71,11 +71,6 @@ export class AppComponent {
     this.operatorSign = button;
     this.number += operatorPipe.transform(button);
   }
-
-  onButtonClick(event: any) {
-    const buttonValue = event.target.getAttribute('data-button');
-    if (buttonValue) {
-      this.calculate(buttonValue);
-    }
-  }
+  onButtonClick(buttonValue: string) {
+    this.calculate(buttonValue);}
 }
