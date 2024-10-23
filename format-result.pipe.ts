@@ -15,13 +15,8 @@ export class OperatorPipe implements PipeTransform {
 })
 export class FormatResultPipe implements PipeTransform {
   transform(value: string | number, decimalLimit: number = 4): string {
-    const num = parseFloat(value.toString());
-    if (isNaN(num)) return value.toString();
-    if (Number.isInteger(num)) {
-      return num.toString();
-    }
-    const formattedValue = num.toFixed(decimalLimit);
-    return parseFloat(formattedValue).toString();
+    const num = +value;
+    return isNaN(num) ? value.toString() : num.toFixed(decimalLimit).replace(/\.?0+$/, '');
   }
 }
 
